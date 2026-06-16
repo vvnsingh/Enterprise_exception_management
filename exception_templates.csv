@@ -1,0 +1,76 @@
+Template_ID,Description,Category
+TMP0001,Temporary Domain Admin Access Required,IAM
+TMP0002,Privileged Access Extension Request,IAM
+TMP0003,MFA Exception For Legacy Application,IAM
+TMP0004,Password Rotation Waiver,IAM
+TMP0005,Service Account Exception,IAM
+TMP0006,Firewall Port Opening Request,Network Security
+TMP0007,VPN Access Extension,Network Security
+TMP0008,Network Segmentation Waiver,Network Security
+TMP0009,Proxy Bypass Request,Network Security
+TMP0010,Remote Access Exception,Network Security
+TMP0011,Cloud Encryption Waiver Request,Cloud Security
+TMP0012,Cloud Access Exception,Cloud Security
+TMP0013,Cloud Monitoring Waiver,Cloud Security
+TMP0014,Cloud Configuration Deviation,Cloud Security
+TMP0015,Cloud MFA Exception,Cloud Security
+TMP0016,Patch Deployment Delay Request,Patch Management
+TMP0017,Critical Patch Deferral Request,Patch Management
+TMP0018,Patch Compliance Waiver,Patch Management
+TMP0019,Patch Testing Delay,Patch Management
+TMP0020,Patch Rollback Approval,Patch Management
+TMP0021,Vulnerability Remediation Delay,Vulnerability Management
+TMP0022,Risk Acceptance For Vulnerability,Vulnerability Management
+TMP0023,Scan Exclusion Request,Vulnerability Management
+TMP0024,Security Finding Exception,Vulnerability Management
+TMP0025,Remediation Extension,Vulnerability Management
+TMP0026,Policy Compliance Waiver,Compliance
+TMP0027,Regulatory Exception,Compliance
+TMP0028,Control Deviation,Compliance
+TMP0029,Compliance Reporting Delay,Compliance
+TMP0030,Standard Exception,Compliance
+TMP0031,Audit Closure Extension,Audit
+TMP0032,Audit Evidence Delay,Audit
+TMP0033,Audit Finding Exception,Audit
+TMP0034,Audit Scope Deviation,Audit
+TMP0035,Audit Observation Extension,Audit
+TMP0036,Vendor Access Exception,Third Party Risk
+TMP0037,Third Party Connectivity Waiver,Third Party Risk
+TMP0038,Supplier Risk Acceptance,Third Party Risk
+TMP0039,Contractor Access Extension,Third Party Risk
+TMP0040,Vendor Assessment Delay,Third Party Risk
+TMP0041,Secure Coding Waiver,Application Security
+TMP0042,WAF Bypass Request,Application Security
+TMP0043,API Security Exception,Application Security
+TMP0044,Application Testing Delay,Application Security
+TMP0045,Code Review Exception,Application Security
+TMP0046,Data Retention Exception,Data Security
+TMP0047,Data Classification Waiver,Data Security
+TMP0048,Encryption Exception,Data Security
+TMP0049,DLP Exception,Data Security
+TMP0050,Data Access Extension,Data Security
+TMP0051,Antivirus Exclusion,Endpoint Security
+TMP0052,USB Usage Exception,Endpoint Security
+TMP0053,Endpoint Monitoring Waiver,Endpoint Security
+TMP0054,Device Control Exception,Endpoint Security
+TMP0055,Endpoint Hardening Waiver,Endpoint Security
+TMP0056,SIEM Monitoring Exception,Security Operations
+TMP0057,Alert Suppression Request,Security Operations
+TMP0058,Log Collection Delay,Security Operations
+TMP0059,SOC Process Exception,Security Operations
+TMP0060,Monitoring Waiver,Security Operations
+TMP0061,Incident Closure Extension,Incident Response
+TMP0062,Forensic Delay,Incident Response
+TMP0063,Containment Exception,Incident Response
+TMP0064,Response Process Deviation,Incident Response
+TMP0065,Investigation Extension,Incident Response
+TMP0066,DR Testing Waiver,Business Continuity
+TMP0067,BCP Exception,Business Continuity
+TMP0068,Recovery Objective Deviation,Business Continuity
+TMP0069,Backup Exception,Business Continuity
+TMP0070,Continuity Assessment Delay,Business Continuity
+TMP0071,Risk Acceptance Request,Risk Governance
+TMP0072,Control Exception,Risk Governance
+TMP0073,Governance Waiver,Risk Governance
+TMP0074,Risk Review Extension,Risk Governance
+TMP0075,Policy Exception,Risk Governance

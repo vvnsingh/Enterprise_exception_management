@@ -344,7 +344,8 @@ if menu == "Submit Exception":
             st.error("Please enter the requester name or ID.")
         else:
             with st.spinner("Saving..."):
-                score, risk    = calculate_risk(asset_criticality, business_impact, duration)
+                score, risk    = calculate_risk(asset_criticality, business_impact, duration,
+                                               compliance_impact, threat_exposure)
                 recommendation = risk_rec(risk)
                 category       = model.predict([description])[0] if model else "Unknown"
             exc_id = save_exception({

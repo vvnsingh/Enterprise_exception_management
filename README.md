@@ -19,14 +19,14 @@ It features a dual-source analytics dashboard, an automated ML model retraining 
 * Provides toggles for **KPIs (Key Performance Indicators)** and **KRIs (Key Risk Indicators)** (such as Critical Exception Rates, Rejection Rates, and Long-Duration Exceptions).
 * Renders interactive Plotly visualisations (Pie Charts, Bar Charts, Grouped Histograms, Scatter Plots) for risk scores, business units, and status metrics.
 
-### 3. **Dynamic Risk Scoring Engine**
-* Computes composite risk scores (ranging up to 120) based on multiple factors:
-  * Asset Criticality (Low, Medium, High)
-  * Business Impact (Low, Medium, High)
-  * Compliance Impact (Low, Medium, High)
-  * Threat Exposure (Low, Medium, High)
-  * Requested Duration (Days)
-* Classifies exceptions into four distinct tiers: **Low**, **Medium**, **High**, and **Critical**.
+### 3. **Deterministic Risk Scoring Engine**
+* Computes composite, transparent risk scores on a 0 to 100 scale using fixed point weights across five dimensions:
+  * Asset Criticality (High=30, Medium=20, Low=10)
+  * Business Impact (High=25, Medium=15, Low=8)
+  * Compliance Impact (High=20, Medium=10, Low=5)
+  * Threat Exposure (High=15, Medium=8, Low=4)
+  * Duration ( >90 days = 10, 46-90 days = 7, <=45 days = 5 )
+* Classifies exceptions into four distinct tiers: **Low** (<40), **Medium** (>=40), **High** (>=70), and **Critical** (>=90).
 
 ### 4. **Intelligent Historical Lookups**
 * Prefix-matches the first 15 characters of new descriptions against the combined 100,000 historical dataset and live DB logs.
@@ -220,10 +220,12 @@ A browser tab will automatically open at `http://localhost:8501`.
 ## 🔬 Core Components & Mechanics
 
 ### 1. Risk Scoring Engine (`risk_engine.py`)
-Calculates the risk score by summing weighted ordinal values from risk factors:
-* **Asset Criticality**: High = 40 | Medium = 25 | Low = 10
-* **Business Impact**: High = 30 | Medium = 20 | Low = 10
-* **Duration**: > 90 Days = 30 | > 45 Days = 20 | <= 45 Days = 10
+Calculates risk scores by summing weighted values from five core inputs:
+* **Asset Criticality**: High = 30 | Medium = 20 | Low = 10
+* **Business Impact**: High = 25 | Medium = 15 | Low = 8
+* **Compliance Impact**: High = 20 | Medium = 10 | Low = 5
+* **Threat Exposure**: High = 15 | Medium = 8 | Low = 4
+* **Duration (Days)**: >90 Days = 10 | 46–90 Days = 7 | <=45 Days = 5
 
 The total score (maximum 100) maps directly to a **Risk Level**:
 * `score >= 90`: **Critical**
@@ -231,7 +233,7 @@ The total score (maximum 100) maps directly to a **Risk Level**:
 * `score >= 40`: **Medium**
 * `score < 40`: **Low**
 
-*(Note: `generate_dataset.py` uses a slightly modified 120-point risk score for broader variance in the training dataset, integrating Compliance Impact and Threat Exposure weights).*
+This module produces transparent, deterministic, and auditable risk assessments with no model inference involved.
 
 ### 2. Historical Intelligence (`historical_engine.py`)
 To prevent duplicate requests and review delays, this engine scans historical records sharing the same description prefix (first 15 characters).

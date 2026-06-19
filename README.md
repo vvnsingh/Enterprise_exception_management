@@ -1,6 +1,6 @@
 # 🛡️ Enterprise Exception Management & Risk Assessment System
 
-An intelligent, AI-driven platform for managing enterprise security and policy exceptions. This system automates the lifecycle of policy exceptions—from submission and automated risk scoring to machine learning-based classification, historical lookups, formal approvals, and compliance report generation.
+An intelligent, AI-driven platform for managing enterprise security and policy exceptions. This system automates the lifecycle of policy exceptions, covering submission, automated risk scoring, machine learning-based classification, historical lookups, formal approvals, and compliance report generation.
 
 It features a dual-source analytics dashboard, an automated ML model retraining pipeline, and high-fidelity PDF report generation.
 

@@ -1,4 +1,4 @@
-# 🛡️ Enterprise Exception Management & Risk Assessment System
+# Enterprise Exception Management & Risk Assessment System
 
 An intelligent, AI-driven platform for managing enterprise security and policy exceptions. This system automates the lifecycle of policy exceptions, covering submission, automated risk scoring, machine learning-based classification, historical lookups, formal approvals, and compliance report generation.
 
@@ -6,20 +6,20 @@ It features a dual-source analytics dashboard, an automated ML model retraining 
 
 ---
 
-## 📌 Features
+## Features
 
-### 1. **Machine Learning-Driven Classification**
+### 1. Machine Learning-Driven Classification
 * Automatically predicts policy exception categories (e.g., *IAM*, *Network Security*, *Cloud Security*, *Patch Management*) from natural language descriptions.
 * Employs a text-processing pipeline containing a `TfidfVectorizer` paired with a classification model serialized via `joblib`.
 
-### 2. **Dual-Source Analytics Dashboard**
+### 2. Dual-Source Analytics Dashboard
 * Supports real-time switching between:
   * **Live Exception Database**: Monitored SQLite instance showing pending, approved, and rejected workflows.
   * **ML Training Dataset**: Historical analysis of 100,000 synthetic exception records.
 * Provides toggles for **KPIs (Key Performance Indicators)** and **KRIs (Key Risk Indicators)** (such as Critical Exception Rates, Rejection Rates, and Long-Duration Exceptions).
 * Renders interactive Plotly visualisations (Pie Charts, Bar Charts, Grouped Histograms, Scatter Plots) for risk scores, business units, and status metrics.
 
-### 3. **Deterministic Risk Scoring Engine**
+### 3. Deterministic Risk Scoring Engine
 * Computes composite, transparent risk scores on a 0 to 100 scale using fixed point weights across five dimensions:
   * Asset Criticality (High=30, Medium=20, Low=10)
   * Business Impact (High=25, Medium=15, Low=8)
@@ -28,19 +28,19 @@ It features a dual-source analytics dashboard, an automated ML model retraining 
   * Duration ( >90 days = 10, 46-90 days = 7, <=45 days = 5 )
 * Classifies exceptions into four distinct tiers: **Low** (<40), **Medium** (>=40), **High** (>=70), and **Critical** (>=90).
 
-### 4. **Intelligent Historical Lookups**
+### 4. Intelligent Historical Lookups
 * Prefix-matches the first 15 characters of new descriptions against the combined 100,000 historical dataset and live DB logs.
 * Computes historical approval rates, recommended exception durations, and confidence levels (Low, Medium, High) based on similar past exceptions.
 
-### 5. **Decision Workflow & Auditing**
+### 5. Decision Workflow & Auditing
 * Supports lifecycle states: `Pending`, `Under Review`, `Approved`, `Rejected`, and `Expired`.
 * Audit features allow tracking approver details (name, employee ID, title/role) and custom rejection reasons.
 
-### 6. **Automated PDF Document Generation**
+### 6. Automated PDF Document Generation
 * Generates compliance-ready, high-fidelity PDF reports using ReportLab.
 * Features custom color-coded risk badges, structured metadata tables, historical intelligence blocks, and a formal signature/approval block.
 
-### 7. **Continuous ML Retraining & Pipeline Upgrade**
+### 7. Continuous ML Retraining & Pipeline Upgrade
 * Triggers an automated retraining run when 50 or more new approved exceptions accumulate.
 * Promotes the model pipeline from Multinomial Naive Bayes to a high-capacity **Logistic Regression classifier** with bi-gram support.
 * Appends new approved records back into the CSV dataset to prevent drift.
@@ -48,7 +48,7 @@ It features a dual-source analytics dashboard, an automated ML model retraining 
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 The workflow below illustrates how users, databases, rules engines, and ML models interact within the platform:
 
@@ -84,7 +84,7 @@ flowchart TD
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Enterprise_Exception_Management/
@@ -112,7 +112,7 @@ Enterprise_Exception_Management/
 
 ---
 
-## 🗄️ Database Schema
+## Database Schema
 
 The SQLite database (`exceptions.db`) is structured to support both audit compliance and machine learning feedback loops:
 
@@ -162,7 +162,7 @@ Stores metrics about every automated retraining loop run.
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 * Python 3.8 or higher
@@ -217,7 +217,7 @@ A browser tab will automatically open at `http://localhost:8501`.
 
 ---
 
-## 🔬 Core Components & Mechanics
+## Core Components & Mechanics
 
 ### 1. Risk Scoring Engine (`risk_engine.py`)
 Calculates risk scores by summing weighted values from five core inputs:
@@ -269,7 +269,7 @@ To adapt to evolving security demands, the system supports online retraining:
 
 ---
 
-## 🔒 Security & Best Practices
+## Security & Best Practices
 * **Data Privacy**: The platform runs entirely locally. Databases (`exceptions.db`) and models (`model.pkl`) are hosted on-premise without external API dependency.
 * **Auditability**: Approval workflows enforce the identification of roles (CISO, IT managers, etc.) and record cryptographic-like textual anchors for compliance audits.
 * **Local Temp Cleanups**: PDF reports are written using ReportLab and compiled immediately, reducing system memory footprints.

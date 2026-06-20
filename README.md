@@ -278,5 +278,5 @@ To adapt to evolving security demands, the system supports online retraining:
 
 ## Deployment
 The application has been deployed on AWS. You can access the live instance using the link below:
-* **AWS Live Link**: [Insert your AWS deployment link here]
+* **AWS Live Link**: [http://35.154.27.51/](http://35.154.27.51/)
 

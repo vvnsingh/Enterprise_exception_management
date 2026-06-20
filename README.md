@@ -277,5 +277,6 @@ To adapt to evolving security demands, the system supports online retraining:
 ---
 
 ## Deployment
-* **Live Link**: [http://35.154.27.51/](http://35.154.27.51/)
+The application has been deployed on AWS:
+* **Live link for the application**: [http://35.154.27.51/](http://35.154.27.51/)
 

@@ -2,6 +2,8 @@
 
 An intelligent, AI-driven platform for managing enterprise security and policy exceptions. This system automates the lifecycle of policy exceptions, covering submission, automated risk scoring, machine learning-based classification, historical lookups, formal approvals, and compliance report generation.
 
+The application has been deployed on [http://35.154.27.51/](http://35.154.27.51/) on AWS for live demonstration purpose.
+
 It features a dual-source analytics dashboard, an automated ML model retraining pipeline, and high-fidelity PDF report generation.
 
 ---
@@ -274,9 +276,4 @@ To adapt to evolving security demands, the system supports online retraining:
 * **Auditability**: Approval workflows enforce the identification of roles (CISO, IT managers, etc.) and record cryptographic-like textual anchors for compliance audits.
 * **Local Temp Cleanups**: PDF reports are written using ReportLab and compiled immediately, reducing system memory footprints.
 
----
-
-## Deployment
-The application has been deployed on AWS:
-* **Live link for the application**: [http://35.154.27.51/](http://35.154.27.51/)
 

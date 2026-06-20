@@ -273,3 +273,10 @@ To adapt to evolving security demands, the system supports online retraining:
 * **Data Privacy**: The platform runs entirely locally. Databases (`exceptions.db`) and models (`model.pkl`) are hosted on-premise without external API dependency.
 * **Auditability**: Approval workflows enforce the identification of roles (CISO, IT managers, etc.) and record cryptographic-like textual anchors for compliance audits.
 * **Local Temp Cleanups**: PDF reports are written using ReportLab and compiled immediately, reducing system memory footprints.
+
+---
+
+## Deployment
+The application has been deployed on AWS. You can access the live instance using the link below:
+* **AWS Live Link**: [Insert your AWS deployment link here]
+
